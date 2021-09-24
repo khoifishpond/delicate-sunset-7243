@@ -22,12 +22,20 @@ describe 'flights index page' do
   end
   
   it 'lists all flight attributes and current passengers' do
-    save_and_open_page
     expect(page).to have_content(@flight1.number)
     expect(page).to have_content(@flight2.number)
     expect(page).to have_content(@flight3.number)
     expect(page).to have_content(@airline1.name)
     expect(page).to have_content(@airline2.name)
     expect(page).to have_content(@airline3.name)
+    expect(page).to have_content(@passenger1.name)
+    expect(page).to have_content(@passenger2.name)
+    expect(page).to have_content(@passenger3.name)
+    expect(page).to have_content(@passenger4.name)
+    expect(page).to have_content(@passenger5.name)
+    expect(page).to have_content(@passenger6.name)
+    expect(page).to have_content(@passenger7.name)
+    expect(page).to have_content(@passenger8.name)
+    expect(page).to have_content(@passenger9.name)
   end
 end
