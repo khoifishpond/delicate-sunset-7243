@@ -38,4 +38,14 @@ describe 'flights index page' do
     expect(page).to have_content(@passenger8.name)
     expect(page).to have_content(@passenger9.name)
   end
+
+  it 'has a link or button that removes a passenger from a flight' do
+    within("#passenger-#{@passenger1.id}") do
+      expect(page).to have_button("Remove #{@passenger1.name}")
+      click_button "Remove #{@passenger1.name}"
+    end
+    
+    expect(current_path).to eq(flights_path)
+    expect(page).to_not have_content(@passenger1.name)
+  end
 end
